@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
   res.send(`${req.session.visits}`);
 })
 
+app.get('/endsession', (req, res) => {
+  req.session.destroy();
+  res.send('Session destroyed');
+})
 app.listen(PORT, function () {
   console.log('Listening on port : ', PORT)
 });
