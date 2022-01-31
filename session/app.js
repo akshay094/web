@@ -3,16 +3,17 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const PORT = process.env.PORT || 3000;
+const MongoStore = require('connect-mongo');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
   secret: process.env.SECRET,
-  resave: true,
+  resave: false,
   saveUninitialized: true,
+  store: MongoStore.create({ mongoUrl: process.env.MONGOURI }),
   cookie: {
-    originalMaxAge: 3600 * 24,
     _expires: 3600
   }
 }));
