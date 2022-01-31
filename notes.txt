@@ -1,0 +1,45 @@
+http1 vs http2 - 
+//forming a tcp connection is slow process
+http1 - 
+// new tcp connection with every request , slow , buffering
+
+http1.1 - 
+// persisted tcp connection , introduce caching , low latency , streaming with chunked 
+// transfer(Image loads pixel by pixel)
+// pipelining - requests are sorted in order they were sent
+
+http2 -
+// multiplexing - send multiple requests on same connection because opening new tcp connection is time taking
+// compression - compresses headers to reduce overheaad
+// server push - send the data to client / don't wait for client's data parsing
+// secure by default 
+// 
+
+http3 -
+// replaces tcp with udp
+// lossy data transfer
+// experimental
+
+url paramaters and req body capacity - 
+// cookies => 4gb & 180 cookies
+// url params => 2048 characters or 2KB
+// body capacity => max 2GB
+
+SOAP - 
+
+// Simple Object Access Protocol
+// SOAP is stateful while REST is stateless
+// SOAP is a protocol whereas rest is an architectural pattern
+// SOAP needs more bandwidth than rest because XML file is large
+// SOAP works with XML only , whereas REST works with XML/JSON/HTML/plainText
+
+web1 web2 and web3
+
+SHA1 SHA256
+// SHA1   is 40 digits or 160 bits // used by ssl certificate authorities to sign certificate                                              // less secure
+// SHA256 is 64 digits or 256 bits // used in blockchain // more secure
+
+implement -
+rpc , protobuff , protofile 
+session cookies 
+MVC
